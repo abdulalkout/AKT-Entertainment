@@ -1,0 +1,92 @@
+body {
+  background-color: black;
+  background-image: url("https://preview.redd.it/v4nhuh2hvgd71.gif?width=640&crop=smart&auto=webp&s=f37ffdb138ac9aa839f5fd77df283992fa749334");
+  color: aliceblue;
+  background-size: cover;
+}
+
+.comic-display {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.comic-img {
+  height: 500px;
+}
+
+.comic-title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  font-size: large;
+  margin-right: 3%;
+  padding-top: 40px;
+  text-decoration: none;
+  color: rgb(117, 31, 31);
+  text-align: center;
+}
+
+.comic-info {
+  margin-left: 20px;
+  width: 600px;
+}
+
+.see-creator,
+.marvel-website {
+  color: brown;
+}
+.see-creator:hover,
+.marvel-website:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.marvel-website {
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: black;
+    color: aliceblue;
+  }
+  .comic-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .comic-img {
+    /* height: 200px;
+    width: 200px; */
+  }
+  .comic-title {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 900;
+    font-size: large;
+    margin-right: 3%;
+    padding-top: 40px;
+    text-decoration: none;
+    color: rgb(117, 31, 31);
+    text-align: center;
+  }
+
+  .comic-info {
+    margin-left: 20px;
+  }
+
+  .see-creator,
+  .marvel-website {
+    color: brown;
+  }
+  .see-creator:hover,
+  .marvel-website:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .marvel-website {
+    margin-bottom: 50px;
+  }
+}
