@@ -1,0 +1,20 @@
+.postersList {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  border: none;
+  border-right: 1px solid #ccc;
+  margin-top: 30px;
+}
+
+.poster {
+  margin-left: 20px;
+  text-align: center;
+}
+
+.poster-title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: large;
+  margin-left: 3%;
+}

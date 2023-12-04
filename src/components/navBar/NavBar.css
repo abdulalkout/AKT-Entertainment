@@ -1,0 +1,66 @@
+@media only screen and (max-width: 3000px) {
+}
+
+.navbar {
+  color: aliceblue;
+  background-color: rgb(13, 13, 13);
+  height: 100px;
+  opacity: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 80px;
+  margin-left: 2%;
+}
+
+.pageLinks {
+  display: flex;
+  margin-right: 2%;
+}
+
+.pageLinks a {
+  text-decoration: none;
+  color: aliceblue;
+  margin: 0 10px;
+}
+
+.mobileMenuIcon {
+  display: none;
+}
+
+/* For mobile veiw */
+@media only screen and (max-width: 600px) {
+  .pageLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    background-color: rgb(13, 13, 13);
+  }
+
+  .pageLinks.active {
+    display: flex;
+  }
+
+  .pageLinks a {
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .mobileMenuIcon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 3%;
+  }
+
+  .logo {
+    margin-left: 2%;
+  }
+}

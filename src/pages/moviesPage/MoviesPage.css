@@ -1,0 +1,45 @@
+.search-input {
+  text-align: center;
+  margin-left: 37%;
+  margin-top: 50px;
+  width: 300px;
+}
+
+.movie-img {
+  height: 500px;
+  margin-bottom: 50px;
+}
+.movies-page-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+}
+
+.movie-card {
+  margin-top: 50px;
+  background-color: gray;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-input {
+    text-align: center;
+    margin-left: 31%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    width: 150px;
+  }
+  .movie-img {
+    height: 400px;
+    margin-bottom: 50px;
+  }
+  .movies-page-list {
+    display: block;
+    text-align: center;
+    font-size: small;
+  }
+}
