@@ -6,6 +6,7 @@ import { ApiContext } from "../../contexts/apiContext/ApiContext";
 import NavBar from "../../components/navBar/NavBar";
 import MoviesPosterList from "../../components/moviePostersList/MoviesPosterList";
 import MoviesList from "../../components/moviesList/MoviesList";
+import MarvelComicsList from "../../components/marvelComicsList/MarvelComicsList";
 
 function Home() {
   let { typicodeData } = useContext(ApiContext);
@@ -15,6 +16,7 @@ function Home() {
       <NavBar />
       <MoviesPosterList data={typicodeData} />
       <MoviesList />
+      <MarvelComicsList />
     </div>
   );
 }

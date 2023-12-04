@@ -1,0 +1,41 @@
+.marvel-card {
+  width: 200px;
+  position: relative;
+}
+
+.marvel-img {
+  height: 200px;
+  width: 150px;
+}
+
+.marvel-comics-list {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.marvel-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+}
+
+.marvel-title-none {
+  display: none;
+}
+
+.marvel-header {
+  margin-top: 100px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: large;
+  margin-left: 3%;
+}
