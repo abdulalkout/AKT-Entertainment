@@ -22,7 +22,7 @@ body {
   margin-right: 3%;
   padding-top: 40px;
   text-decoration: none;
-  color: rgb(117, 31, 31);
+  color: brown;
   text-align: center;
 }
 
@@ -45,10 +45,23 @@ body {
   margin-bottom: 50px;
 }
 
+.add-later {
+  margin-top: 30px;
+  background-color: brown;
+  border: none;
+  height: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.add-later:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     background-color: black;
     color: aliceblue;
+    background-image: none;
   }
   .comic-display {
     display: flex;
@@ -68,12 +81,13 @@ body {
     margin-right: 3%;
     padding-top: 40px;
     text-decoration: none;
-    color: rgb(117, 31, 31);
+    color: brown;
     text-align: center;
   }
 
   .comic-info {
     margin-left: 20px;
+    width: 350px;
   }
 
   .see-creator,
@@ -88,5 +102,13 @@ body {
 
   .marvel-website {
     margin-bottom: 50px;
+  }
+
+  .add-later {
+    margin-top: 30px;
+    background-color: brown;
+    border: none;
+    height: 30px;
+    border-radius: 20px;
   }
 }

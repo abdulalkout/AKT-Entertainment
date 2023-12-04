@@ -42,6 +42,8 @@ function ComicsDisplay() {
         <a className="marvel-website" href={currentComic.urls[0].url}>
           Go to Marvel Website
         </a>
+        <br />
+        <button className="add-later">add to whatch later</button>
       </div>
     </div>
   );
