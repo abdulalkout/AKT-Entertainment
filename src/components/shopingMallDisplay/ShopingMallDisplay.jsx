@@ -16,6 +16,9 @@ function ShopingMallDisplay() {
     Apple: false,
     Samsung: false,
     Lenovo: false,
+    Graphite: false,
+    Silver: false,
+    Gold: false,
   });
 
   // function to handle the category check box //
