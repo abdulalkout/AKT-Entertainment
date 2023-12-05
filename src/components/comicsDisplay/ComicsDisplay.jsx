@@ -1,15 +1,22 @@
 import React, { useState, useContext } from "react";
 import "./ComicsDisplay.css";
 import { MarvelApiContext } from "../../contexts/apiContext/MarvelApiContext";
-
-import { UserContext } from "../../contexts/userContext/UserContext";
+import { WatchContext } from "../../contexts/userContext/watchContext";
 
 function ComicsDisplay() {
   const { currentComic } = useContext(MarvelApiContext);
   let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
   const [creators, setCreators] = useState(false);
 
-  const { addToWatchList } = useContext(UserContext);
+  const { setWatchLater, watchLater } = useContext(WatchContext);
+
+  const handleWatchLater = () => {
+    setWatchLater([
+      ...watchLater,
+      { ...currentComic, name: currentComic.title, image: marvelComicPic },
+    ]);
+    console.log(watchLater);
+  };
 
   const openCreator = () => {
     return currentComic.creators.items.map((creator, index) => {
@@ -46,7 +53,9 @@ function ComicsDisplay() {
           Go to Marvel Website
         </a>
         <br />
-        <button className="add-later">add to whatch later</button>
+        <button onClick={handleWatchLater} className="add-later">
+          add to whatch later
+        </button>
       </div>
     </div>
   );

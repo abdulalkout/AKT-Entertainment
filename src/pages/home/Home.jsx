@@ -1,9 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { ApiContext } from "../../contexts/apiContext/ApiContext";
-
-// module example
-import Watch from "../../modules/watch";
+import { WatchContext } from "../../contexts/userContext/watchContext";
 // import components //
 import NavBar from "../../components/navBar/NavBar";
 import MoviesPosterList from "../../components/moviePostersList/MoviesPosterList";
@@ -13,11 +11,12 @@ import WatchList from "../../components/watch/WatchList";
 
 function Home() {
   let { typicodeData } = useContext(ApiContext);
+  const { watchLater } = useContext(WatchContext);
 
   return (
     <div>
       <NavBar />
-      {Watch.length ? <WatchList data={Watch} /> : null}
+      {watchLater.length ? <WatchList data={watchLater} /> : null}
       <MoviesPosterList data={typicodeData} />
       <MoviesList />
       <MarvelComicsList />
