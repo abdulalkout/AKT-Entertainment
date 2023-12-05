@@ -1,17 +1,21 @@
 import React from "react";
+import "./WatchList.css";
+import { useState, useContext } from "react";
+import { MarvelApiContext } from "../../contexts/apiContext/MarvelApiContext";
+import { Link } from "react-router-dom";
+import WatchCard from "./WatchCard";
 
 function WatchList({ data }) {
+  const [onHover, setOnHover] = useState("marvel-title-none");
+  const { setCurrentComic } = useContext(MarvelApiContext);
   return (
     <div>
-      <p>Watch Later</p>
-      {data.map((item, index) => {
-        return (
-          <div key={index}>
-            <img src={item.image} />
-            <p style={{ color: "white" }}>{item.name}</p>
-          </div>
-        );
-      })}
+      <p className="watch-header">Watch Later</p>
+      <div className="watch-list">
+        {data.map((item, index) => {
+          return <WatchCard key={index} item={item} />;
+        })}
+      </div>
     </div>
   );
 }
