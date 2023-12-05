@@ -8,10 +8,14 @@ import ShopingMallCard from "./ShopingMallCard";
 
 function ShopingMallDisplay() {
   const { mallData, setMallData } = useContext(ProductsContext);
+  const [initialMallData] = useState(mallData);
   const [categoryCheckboxes, setCategoryCheckboxes] = useState({
-    smartphone: false,
-    tablet: false,
-    laptop: false,
+    Smartphone: false,
+    Tablet: false,
+    Laptop: false,
+    Apple: false,
+    Samsung: false,
+    Lenovo: false,
   });
 
   // function to handle the category check box //
@@ -21,15 +25,24 @@ function ShopingMallDisplay() {
       [checkboxName]: !prevCheckboxes[checkboxName],
     }));
   };
-  const filteredData = (mallItem) => {
-    if (categoryCheckboxes.smartphone) {
-      return mallItem.productCategory === "Smartphone";
+
+  const filteredData = (mallItem, key) => {
+    // return mallItem.productCategory === key;
+    if (mallItem.productCategory === key) {
+      return mallItem.productCategory === key;
+    } else if (mallItem.brand === key) {
+      return mallItem.brand === key;
     }
   };
+
   const filterMallData = () => {
+    let newMallData = mallData;
+
     Object.keys(categoryCheckboxes).forEach((key) => {
       if (categoryCheckboxes[key] === true) {
-        let newMallData = mallData.filter(filteredData);
+        newMallData = newMallData.filter((mallItem) => {
+          return filteredData(mallItem, key);
+        });
         setMallData(newMallData);
       }
     });
@@ -44,39 +57,73 @@ function ShopingMallDisplay() {
       <div className="filter-div">
         <p className="div-title">Filter</p>
         <div className="product-category">
-          <p>product Category</p>
-          <label for="Smartphone">
+          <p className="search-title">product Category</p>
+          <label htmlFor="Smartphone">
             Smartphone
             <input
               type="checkbox"
               id="Smartphone"
               name="Smartphone"
-              checked={categoryCheckboxes.smartphone}
-              onChange={() => handleCategoryCheckboxChange("smartphone")}
+              checked={categoryCheckboxes.Smartphone}
+              onChange={() => handleCategoryCheckboxChange("Smartphone")}
             />
           </label>
-          <label for="Tablet">
+          <label htmlFor="Tablet">
             Tablet
             <input
               type="checkbox"
               id="Tablet"
               name="Tablet"
-              checked={categoryCheckboxes.tablet}
-              onChange={() => handleCategoryCheckboxChange("tablet")}
+              checked={categoryCheckboxes.Tablet}
+              onChange={() => handleCategoryCheckboxChange("Tablet")}
             />
           </label>
-          <label for="Laptop">
+          <label htmlFor="Laptop">
             Laptop
             <input
               type="checkbox"
               id="Laptop"
               name="Laptop"
-              checked={categoryCheckboxes.laptop}
-              onChange={() => handleCategoryCheckboxChange("laptop")}
+              checked={categoryCheckboxes.Laptop}
+              onChange={() => handleCategoryCheckboxChange("Laptop")}
+            />
+          </label>
+        </div>
+        <div className="product-category">
+          <p className="search-title">Brand Name</p>
+          <label htmlFor="Apple">
+            Apple
+            <input
+              type="checkbox"
+              id="Apple"
+              name="Apple"
+              checked={categoryCheckboxes.Apple}
+              onChange={() => handleCategoryCheckboxChange("Apple")}
+            />
+          </label>
+          <label htmlFor="Samsung">
+            Samsung
+            <input
+              type="checkbox"
+              id="Samsung"
+              name="Samsung"
+              checked={categoryCheckboxes.Samsung}
+              onChange={() => handleCategoryCheckboxChange("Samsung")}
+            />
+          </label>
+          <label htmlFor="Lenovo">
+            Lenovo
+            <input
+              type="checkbox"
+              id="Lenovo"
+              name="Lenovo"
+              checked={categoryCheckboxes.Lenovo}
+              onChange={() => handleCategoryCheckboxChange("Lenovo")}
             />
           </label>
         </div>
       </div>
+
       <div className="data-display-list">
         {mallData.map((item, index) => {
           return <ShopingMallCard key={index} item={item} />;
