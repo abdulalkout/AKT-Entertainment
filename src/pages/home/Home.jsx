@@ -8,6 +8,7 @@ import MoviesPosterList from "../../components/moviePostersList/MoviesPosterList
 import MoviesList from "../../components/moviesList/MoviesList";
 import MarvelComicsList from "../../components/marvelComicsList/MarvelComicsList";
 import WatchList from "../../components/watch/WatchList";
+import ShoppingMallSection from "../../components/shoppingMall/ShoppingMallSection";
 
 function Home() {
   let { typicodeData } = useContext(ApiContext);
@@ -20,6 +21,7 @@ function Home() {
       <MoviesPosterList data={typicodeData} />
       <MoviesList />
       <MarvelComicsList />
+      <ShoppingMallSection />
     </div>
   );
 }

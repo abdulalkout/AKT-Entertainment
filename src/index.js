@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import ApiContextProvider from "./contexts/apiContext/ApiContext";
 import MarvelApiContextProvider from "./contexts/apiContext/MarvelApiContext";
 import WatchContextProvider from "./contexts/userContext/watchContext";
+import ProductsContextProvider from "./contexts/apiContext/ProductsContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,9 @@ root.render(
       <ApiContextProvider>
         <MarvelApiContextProvider>
           <WatchContextProvider>
-            <App />
+            <ProductsContextProvider>
+              <App />
+            </ProductsContextProvider>
           </WatchContextProvider>
         </MarvelApiContextProvider>
       </ApiContextProvider>

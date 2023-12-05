@@ -26,7 +26,7 @@ function MarvelApiContextProvider(props) {
       const response = await fetch(urlMarvel);
       const data = await response.json();
       setMarvelApiComicsData(data.data.results);
-      console.log(data);
+      // console.log(data);
     } catch (err) {
       setMarvelApiComicsData([]);
       console.log(err);
