@@ -1,0 +1,29 @@
+.mall-display {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-div {
+  height: 700px;
+  width: 300px;
+  display: block;
+  background-color: white;
+  color: black;
+}
+
+.div-title {
+  /* color: black; */
+}
+
+.data-display-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2;
+  gap: 10px;
+  margin-left: 30px;
+}
+
+.product-img {
+  height: 200px;
+  width: 200px;
+}

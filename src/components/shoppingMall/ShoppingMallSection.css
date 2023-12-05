@@ -1,0 +1,62 @@
+.section-header {
+  margin-top: 100px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: large;
+  margin-left: 3%;
+}
+
+.shoping-section {
+  width: 200px;
+  position: relative;
+  width: 100%;
+}
+
+.ads-image {
+  height: 300px;
+  margin-bottom: 50px;
+  margin-left: 30%;
+}
+
+.shopping-link {
+  text-decoration: none;
+  color: aliceblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 15%;
+  margin-left: 42%;
+}
+
+.shopping-link-none {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .ads-image {
+    height: 150px;
+    margin-left: 19%;
+  }
+
+  .shopping-link {
+    text-decoration: none;
+    color: aliceblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 25%;
+    margin-left: 6%;
+  }
+}
