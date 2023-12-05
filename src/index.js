@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import ApiContextProvider from "./contexts/apiContext/ApiContext";
 import MarvelApiContextProvider from "./contexts/apiContext/MarvelApiContext";
-import UserContextProvider from "./contexts/userContext/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,9 +13,7 @@ root.render(
     <Router>
       <ApiContextProvider>
         <MarvelApiContextProvider>
-          <UserContextProvider>
-            <App />
-          </UserContextProvider>
+          <App />
         </MarvelApiContextProvider>
       </ApiContextProvider>
     </Router>

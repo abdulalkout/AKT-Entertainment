@@ -18,12 +18,16 @@ body {
 .comic-title {
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
-  font-size: large;
+  font-size: x-large;
   margin-right: 3%;
   padding-top: 40px;
   text-decoration: none;
-  color: brown;
+  color: aliceblue;
   text-align: center;
+}
+
+.comic-story {
+  font-size: medium;
 }
 
 .comic-info {
@@ -70,10 +74,6 @@ body {
     gap: 20px;
   }
 
-  .comic-img {
-    /* height: 200px;
-    width: 200px; */
-  }
   .comic-title {
     font-family: "Courier New", Courier, monospace;
     font-weight: 900;
@@ -81,8 +81,11 @@ body {
     margin-right: 3%;
     padding-top: 40px;
     text-decoration: none;
-    color: brown;
+    color: aliceblue;
     text-align: center;
+  }
+  .comic-story {
+    font-size: small;
   }
 
   .comic-info {

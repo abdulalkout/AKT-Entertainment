@@ -1,12 +1,15 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./ComicsDisplay.css";
 import { MarvelApiContext } from "../../contexts/apiContext/MarvelApiContext";
+
+import { UserContext } from "../../contexts/userContext/UserContext";
 
 function ComicsDisplay() {
   const { currentComic } = useContext(MarvelApiContext);
   let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
   const [creators, setCreators] = useState(false);
+
+  const { addToWatchList } = useContext(UserContext);
 
   const openCreator = () => {
     return currentComic.creators.items.map((creator, index) => {
@@ -29,7 +32,7 @@ function ComicsDisplay() {
       <img className="comic-img" src={marvelComicPic} />
       <div className="comic-info">
         <p className="comic-title">{currentComic.title}</p>
-        <p>{currentComic.textObjects[0].text}</p>
+        <p className="comic-story">{currentComic.textObjects[0].text}</p>
 
         {creators ? (
           openCreator()
