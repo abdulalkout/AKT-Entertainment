@@ -2,20 +2,30 @@ import React, { useState, useContext } from "react";
 import "./ComicsDisplay.css";
 import { MarvelApiContext } from "../../contexts/apiContext/MarvelApiContext";
 import { WatchContext } from "../../contexts/userContext/watchContext";
+import { SignInContext } from "../../contexts/userContext/SignInContext";
 
 function ComicsDisplay() {
   const { currentComic } = useContext(MarvelApiContext);
   let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
   const [creators, setCreators] = useState(false);
+  const { signIn } = useContext(SignInContext);
 
   const { setWatchLater, watchLater } = useContext(WatchContext);
 
-  const handleWatchLater = () => {
+  const handleWatching = () => {
     setWatchLater([
       ...watchLater,
       { ...currentComic, name: currentComic.title, image: marvelComicPic },
     ]);
     console.log(watchLater);
+  };
+
+  const handleSignIn = () => {
+    if (signIn) {
+      handleWatching();
+    } else {
+      return <p>Please SignIn First</p>;
+    }
   };
 
   const openCreator = () => {
@@ -53,8 +63,8 @@ function ComicsDisplay() {
           Go to Marvel Website
         </a>
         <br />
-        <button onClick={handleWatchLater} className="add-later">
-          add to whatch later
+        <button onClick={handleSignIn} className="add-later">
+          Watch Now
         </button>
       </div>
     </div>

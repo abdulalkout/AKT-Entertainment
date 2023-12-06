@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { SignInContext } from "../../contexts/userContext/SignInContext";
 
 function NavBar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { signIn, setSignIn } = useContext(SignInContext);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -16,10 +20,18 @@ function NavBar() {
         alt="Logo"
       />
       <div className={`pageLinks ${isMobileMenuOpen ? "active" : ""}`}>
-        <a className="nav-links">home</a>
-        <a className="nav-links">comics</a>
-        <a className="nav-links">shop</a>
-        <a className="nav-links">signIn</a>
+        <Link to="/" className="nav-links">
+          home
+        </Link>
+        <Link to="/allmovies" className="nav-links">
+          movies
+        </Link>
+        <Link to="/Shopping" className="nav-links">
+          shop
+        </Link>
+        <Link to="/signin" className="nav-links">
+          {signIn ? "SignOut" : "SignIn"}
+        </Link>
       </div>
       <div className="mobileMenuIcon" onClick={toggleMobileMenu}>
         &#9776;

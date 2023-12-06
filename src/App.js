@@ -7,6 +7,7 @@ import MoviesPage from "./pages/moviesPage/MoviesPage";
 import ComicsPage from "./pages/comicsPage/ComicsPage";
 import ShoppingPage from "./pages/shoppingPage/ShoppingPage";
 import ShopItemPage from "./pages/shopItemPage/ShopItemPage";
+import SignInPage from "./pages/signInPage/SignInPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/comics" element={<ComicsPage />} />
       <Route path="/Shopping" element={<ShoppingPage />} />
       <Route path="/ShopItem" element={<ShopItemPage />} />
+      <Route path="/signin" element={<SignInPage />} />
     </Routes>
   );
 }

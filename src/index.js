@@ -8,6 +8,7 @@ import ApiContextProvider from "./contexts/apiContext/ApiContext";
 import MarvelApiContextProvider from "./contexts/apiContext/MarvelApiContext";
 import WatchContextProvider from "./contexts/userContext/watchContext";
 import ProductsContextProvider from "./contexts/apiContext/ProductsContext";
+import SignInContextProvider from "./contexts/userContext/SignInContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,7 +18,9 @@ root.render(
         <MarvelApiContextProvider>
           <WatchContextProvider>
             <ProductsContextProvider>
-              <App />
+              <SignInContextProvider>
+                <App />
+              </SignInContextProvider>
             </ProductsContextProvider>
           </WatchContextProvider>
         </MarvelApiContextProvider>
