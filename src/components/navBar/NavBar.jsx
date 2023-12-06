@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -6,7 +6,7 @@ import { SignInContext } from "../../contexts/userContext/SignInContext";
 
 function NavBar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { signIn, cart } = useContext(SignInContext);
+  const { signIn, cart, totalPrice, setTotalPrice } = useContext(SignInContext);
   const [onhover, setOnhover] = useState("on-hover-bar-none");
 
   const toggleMobileMenu = () => {
@@ -19,6 +19,12 @@ function NavBar() {
   const hideCartItems = () => {
     setOnhover("on-hover-bar-none");
   };
+
+  useEffect(() => {
+    cart.map((item) => {
+      setTotalPrice(totalPrice + item.basePrice);
+    });
+  }, [cart]);
 
   return (
     <div className="sticky-nav">
@@ -62,10 +68,11 @@ function NavBar() {
                       className="cart-item-image"
                       src={item.thumbnailImage}
                     />
-                    <p className="cart-item-price"> {item.basePrice}</p>
+                    <p className="cart-item-price">Price: ${item.basePrice}</p>
                   </div>
                 );
               })}
+              <p className="price-total">Total Price = ${totalPrice}</p>
             </div>
           ) : (
             <div>You have no items</div>

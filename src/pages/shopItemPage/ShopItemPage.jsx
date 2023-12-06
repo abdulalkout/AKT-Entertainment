@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./ShopItemPage.css";
 import { useContext, useState } from "react";
 import { ProductsContext } from "../../contexts/apiContext/ProductsContext";
@@ -9,17 +9,38 @@ import NavBar from "../../components/navBar/NavBar";
 
 function ShopItemPage() {
   const { currentProduct } = useContext(ProductsContext);
-  const { cart, setCart } = useContext(SignInContext);
+  const { cart, setCart, signIn, setTotalPrice } = useContext(SignInContext);
   const [moreInfo, setMoreInfo] = useState("more-info-none");
   const [seeMore, setMore] = useState("see-more");
+  const [numberOfItem, setNumberOfItem] = useState(0);
 
   const changeDisplay = (display) => {
     setMore(display);
   };
 
   const handleCartChange = () => {
-    setCart([...cart, currentProduct]);
-    console.log(cart);
+    if (numberOfItem === 0) {
+      return;
+    } else if (signIn) {
+      setCart((prevCart) => [
+        ...prevCart,
+        {
+          ...currentProduct,
+          basePrice: currentProduct.basePrice * numberOfItem,
+          items: numberOfItem,
+        },
+      ]);
+    }
+  };
+
+  const decrease = () => {
+    if (numberOfItem - 1 !== -1) {
+      setNumberOfItem(numberOfItem - 1);
+    }
+  };
+
+  const increase = () => {
+    setNumberOfItem(numberOfItem + 1);
   };
 
   return (
@@ -93,7 +114,16 @@ function ShopItemPage() {
               see less
             </p>
           </div>
-
+          <p className="description">Number of item</p>
+          <div className="number-of-items description">
+            <button onClick={decrease} className="decrease-button">
+              -
+            </button>
+            <p> {numberOfItem} </p>
+            <button onClick={increase} className="increase-button">
+              +
+            </button>
+          </div>
           <button onClick={handleCartChange} className="add-to-cart">
             Add to cart
           </button>

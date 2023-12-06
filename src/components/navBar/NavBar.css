@@ -37,11 +37,16 @@
 }
 
 .on-hover-bar {
-  /* height: 100px; */
-  width: 100%;
+  height: 300px;
+  width: 300px;
   background-color: aliceblue;
   color: black;
   text-align: center;
+  margin-left: 75%;
+  overflow-y: auto;
+  white-space: nowrap;
+  position: fixed;
+  border-radius: 20px;
 }
 
 .on-hover-bar-none {
@@ -50,13 +55,22 @@
 
 .cart-list {
   display: flex;
-  overflow-x: auto;
+  flex-direction: column;
+  overflow-y: auto;
   white-space: nowrap;
   gap: 10px;
 }
 
 .cart-item-image {
   height: 100px;
+}
+
+.cart-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  margin-left: 10px;
+  gap: 40px;
 }
 
 /* For mobile veiw */
@@ -90,5 +104,42 @@
 
   .logo {
     margin-left: 2%;
+  }
+
+  .on-hover-bar {
+    height: 300px;
+    width: 300px;
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    margin-left: 20%;
+    overflow-y: auto;
+    white-space: nowrap;
+    position: fixed;
+    border-radius: 20px;
+  }
+
+  .on-hover-bar-none {
+    display: none;
+  }
+
+  .cart-list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    white-space: nowrap;
+    gap: 10px;
+  }
+
+  .cart-item-image {
+    height: 100px;
+  }
+
+  .cart-item {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    margin-left: 10px;
+    gap: 40px;
   }
 }

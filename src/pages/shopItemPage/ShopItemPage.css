@@ -68,6 +68,10 @@
   background-color: rgb(224, 198, 66);
 }
 
+.number-of-items {
+  display: flex;
+}
+
 @media only screen and (max-width: 600px) {
   .product-card-display {
     display: flex;
