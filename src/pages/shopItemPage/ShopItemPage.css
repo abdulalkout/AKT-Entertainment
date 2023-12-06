@@ -1,0 +1,125 @@
+.product-card-display {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: aliceblue;
+  color: black;
+  padding: 50px 20px;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 30px;
+}
+
+.product-image {
+  border-radius: 10%;
+}
+
+.basic-info {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+}
+
+.inputs-check {
+  margin-top: 30px;
+}
+/* cdcd */
+.brand {
+  font-size: x-large;
+}
+
+.description {
+  margin-left: 20px;
+  font-size: medium;
+  font-weight: 0;
+}
+
+.more-info,
+.see-more {
+  margin-left: 20px;
+}
+
+.see-more {
+  color: blue;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.more-info-none {
+  display: none;
+}
+
+.see-more-none {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .product-card-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: aliceblue;
+    color: black;
+    padding: 50px 20px;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  .product-image {
+    border-radius: 10%;
+  }
+
+  .basic-info {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .options {
+    display: block;
+  }
+
+  .title {
+    margin-top: 50px;
+  }
+
+  .inputs-check {
+    margin-top: 30px;
+  }
+
+  .brand {
+    font-size: x-large;
+  }
+
+  .description {
+    margin-left: 0px;
+    font-size: medium;
+    font-weight: 0;
+  }
+
+  .more-info,
+  .see-more {
+    margin-left: 0px;
+  }
+
+  .see-more {
+    color: blue;
+    margin-top: 40px;
+  }
+
+  .see-more:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .more-info-none {
+    display: none;
+  }
+
+  .see-more-none {
+    display: none;
+  }
+}

@@ -16,9 +16,10 @@ function NavBar() {
         alt="Logo"
       />
       <div className={`pageLinks ${isMobileMenuOpen ? "active" : ""}`}>
-        <a href="/">home</a>
-        <a href="">movies</a>
-        <a href="">signIn</a>
+        <a className="nav-links">home</a>
+        <a className="nav-links">comics</a>
+        <a className="nav-links">shop</a>
+        <a className="nav-links">signIn</a>
       </div>
       <div className="mobileMenuIcon" onClick={toggleMobileMenu}>
         &#9776;
