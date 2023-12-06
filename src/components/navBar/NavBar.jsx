@@ -62,6 +62,7 @@ function NavBar() {
                       className="cart-item-image"
                       src={item.thumbnailImage}
                     />
+                    <p className="cart-item-price"> {item.basePrice}</p>
                   </div>
                 );
               })}
