@@ -24,7 +24,7 @@ function ComicsDisplay() {
     if (signIn) {
       handleWatching();
     } else {
-      return <p>Please SignIn First</p>;
+      return setWatchLater([...watchLater]);
     }
   };
 

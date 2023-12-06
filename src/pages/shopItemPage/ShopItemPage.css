@@ -58,6 +58,16 @@
   display: none;
 }
 
+.add-to-cart {
+  margin-left: 30px;
+  margin-top: 30px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(224, 198, 66);
+}
+
 @media only screen and (max-width: 600px) {
   .product-card-display {
     display: flex;
@@ -121,5 +131,15 @@
 
   .see-more-none {
     display: none;
+  }
+
+  .add-to-cart {
+    margin-left: 0px;
+    margin-top: 30px;
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(224, 198, 66);
   }
 }

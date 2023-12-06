@@ -1,6 +1,11 @@
 @media only screen and (max-width: 3000px) {
 }
-
+.sticky-nav {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  position: sticky;
+}
 .navbar {
   color: aliceblue;
   background-color: rgb(13, 13, 13);
@@ -29,6 +34,29 @@
 
 .mobileMenuIcon {
   display: none;
+}
+
+.on-hover-bar {
+  height: 100px;
+  width: 100%;
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+}
+
+.on-hover-bar-none {
+  display: none;
+}
+
+.cart-list {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+}
+
+.cart-item-image {
+  height: 100px;
 }
 
 /* For mobile veiw */

@@ -2,17 +2,24 @@ import React from "react";
 import "./ShopItemPage.css";
 import { useContext, useState } from "react";
 import { ProductsContext } from "../../contexts/apiContext/ProductsContext";
+import { SignInContext } from "../../contexts/userContext/SignInContext";
 
 // import components //
 import NavBar from "../../components/navBar/NavBar";
 
 function ShopItemPage() {
   const { currentProduct } = useContext(ProductsContext);
+  const { cart, setCart } = useContext(SignInContext);
   const [moreInfo, setMoreInfo] = useState("more-info-none");
   const [seeMore, setMore] = useState("see-more");
 
   const changeDisplay = (display) => {
     setMore(display);
+  };
+
+  const handleCartChange = () => {
+    setCart([...cart, currentProduct]);
+    console.log(cart);
   };
 
   return (
@@ -87,7 +94,9 @@ function ShopItemPage() {
             </p>
           </div>
 
-          <button>Add to cart</button>
+          <button onClick={handleCartChange} className="add-to-cart">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
