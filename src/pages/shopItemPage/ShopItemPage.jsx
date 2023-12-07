@@ -29,7 +29,7 @@ function ShopItemPage() {
         {
           ...currentProduct,
           basePrice: currentProduct.basePrice * numberOfItem,
-          items: numberOfItem,
+          itemsNumber: numberOfItem,
         },
       ]);
     }

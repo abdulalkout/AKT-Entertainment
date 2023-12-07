@@ -63,12 +63,19 @@ function NavBar() {
             <div className="cart-list">
               {cart.map((item, index) => {
                 return (
-                  <div className="cart-item">
+                  <div key={index} className="cart-item">
                     <img
                       className="cart-item-image"
                       src={item.thumbnailImage}
                     />
-                    <p className="cart-item-price">Price: ${item.basePrice}</p>
+                    <div>
+                      <p className="cart-item-price">
+                        Price: ${item.basePrice}
+                      </p>
+                      <p className="cart-item-price">
+                        Items: {item.itemsNumber}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
