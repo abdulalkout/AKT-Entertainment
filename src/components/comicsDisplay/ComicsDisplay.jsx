@@ -93,7 +93,7 @@ function ComicsDisplay() {
 
       <div className={showVideo.video}>
         <img className="video-display" src={video} />
-        <button onClick={handledisplay} className="add-later">
+        <button onClick={handledisplay} className="add-later stop-wathcing">
           Stop
         </button>
       </div>

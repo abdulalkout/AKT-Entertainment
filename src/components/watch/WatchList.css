@@ -16,10 +16,11 @@
   margin-top: 30px;
   gap: 10px;
   scrollbar-width: thin;
+  margin-left: 20px;
 }
 
 .watch-list::-webkit-scrollbar {
-  width: 12px;
+  width: 5px;
 }
 
 .watch-list::-webkit-scrollbar-thumb {

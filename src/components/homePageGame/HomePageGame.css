@@ -58,6 +58,12 @@
   border-radius: 50%;
 }
 
+.game-buttons:hover {
+  cursor: pointer;
+  height: 70px;
+  width: 70px;
+}
+
 @media only screen and (max-width: 600px) {
   .game-image {
     height: 150px;
