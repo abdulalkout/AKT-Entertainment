@@ -2,14 +2,15 @@ import React, { useState, useReducer } from "react";
 import "./HomePageGame.css";
 import { useContext } from "react";
 import { GamesContext } from "../../contexts/apiContext/gamesContext";
+import { type } from "@testing-library/user-event/dist/type";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "1":
+    case 1:
       return {
         id: 0,
       };
-    case "2":
+    case 2:
       return {
         id: 1,
       };
@@ -19,6 +20,8 @@ const reducer = (state, action) => {
 function HomePageGame() {
   const { games } = useContext(GamesContext);
   const [onHover, setOnHover] = useState("game-name-none");
+  const [stateNumber, setStateNumber] = useState(1);
+
   const [state, dispatch] = useReducer(reducer, {
     id: 0,
   });
@@ -38,7 +41,7 @@ function HomePageGame() {
           }}
         >
           {games[state.id].name}
-          <p>{games[state.id].creator}</p>
+          {/* <p>{games[state.id].creator}</p> */}
         </p>
         <img
           className="game-image"
@@ -48,20 +51,23 @@ function HomePageGame() {
           }}
         />
       </div>
-      <button
-        onClick={() => {
-          dispatch({ type: "1" });
-        }}
-      >
-        &larr;
-      </button>
-      <button
-        onClick={() => {
-          dispatch({ type: "2" });
-        }}
-      >
-        &rarr;
-      </button>
+
+      <div className="reducer-buttons">
+        <button
+          onClick={() => {
+            dispatch({ type: 1 });
+          }}
+        >
+          Abdul
+        </button>
+        <button
+          onClick={() => {
+            dispatch({ type: 2 });
+          }}
+        >
+          Jorge
+        </button>
+      </div>
     </div>
   );
 }
