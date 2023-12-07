@@ -130,11 +130,13 @@ function ShopItemPage() {
             Add to cart
           </button>
         </div>
-      </div>
+      </div>{" "}
+      <p className="suggestions-title">Suggestions for you</p>
       <div className="suggestions">
         {mallData.map((item, index) => {
           return (
             <Link
+              key={index}
               to="/ShopItem"
               onClick={() => {
                 setCurrentProduct(item);
