@@ -54,6 +54,7 @@ function HomePageGame() {
 
       <div className="reducer-buttons">
         <button
+          className="game-buttons"
           onClick={() => {
             dispatch({ type: 1 });
           }}
@@ -61,6 +62,7 @@ function HomePageGame() {
           Abdul
         </button>
         <button
+          className="game-buttons"
           onClick={() => {
             dispatch({ type: 2 });
           }}

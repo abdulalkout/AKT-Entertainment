@@ -1,5 +1,6 @@
 .game-image {
   height: 300px;
+  width: 700px;
   margin-left: 23%;
 }
 .game-section {
@@ -42,12 +43,31 @@
   position: relative;
 }
 
+.reducer-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.game-buttons {
+  height: 50px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(192, 22, 22, 0.2);
+  background-color: brown;
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 600px) {
   .game-image {
     height: 150px;
-    margin-left: 10%;
+    width: 300px;
+    margin-left: 3%;
   }
 
+  .game-card {
+    text-align: center;
+  }
   .game-name {
     position: absolute;
     top: -20px;

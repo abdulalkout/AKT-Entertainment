@@ -1,6 +1,6 @@
 import React, { useState, createContext } from "react";
 import tishTisha from "../../images/Tish-Tisha.jpg";
-import rps from "../../images/RPS.webp";
+import rps from "../../images/RPS.png";
 
 export const GamesContext = createContext();
 
