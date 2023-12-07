@@ -15,7 +15,17 @@
   overflow-x: auto;
   margin-top: 30px;
   gap: 10px;
-  margin-left: 20px;
+  scrollbar-width: thin;
+}
+
+.watch-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.watch-list::-webkit-scrollbar-thumb {
+  background-color: #ab1111;
+  border-radius: 10px;
+  height: 2px;
 }
 
 .watch-title {
