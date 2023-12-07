@@ -49,7 +49,11 @@ function ComicsDisplay() {
       <img className="comic-img" src={marvelComicPic} />
       <div className="comic-info">
         <p className="comic-title">{currentComic.title}</p>
-        <p className="comic-story">{currentComic.textObjects[0].text}</p>
+        <p className="comic-story">
+          {currentComic.textObjects.length
+            ? currentComic.textObjects[0].text
+            : "No description available"}
+        </p>
 
         {creators ? (
           openCreator()
