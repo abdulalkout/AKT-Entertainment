@@ -7,6 +7,7 @@
 .marvel-img {
   height: 200px;
   width: 150px;
+  margin-bottom: 20px;
 }
 
 .marvel-comics-list {
@@ -15,6 +16,17 @@
   margin-top: 30px;
   gap: 10px;
   margin-left: 15px;
+  scrollbar-width: thin;
+}
+
+.marvel-comics-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.marvel-comics-list::-webkit-scrollbar-thumb {
+  background-color: #ab1111;
+  border-radius: 20px;
+  height: 2px;
 }
 
 .marvel-title {

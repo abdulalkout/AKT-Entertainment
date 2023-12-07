@@ -1,6 +1,6 @@
-.movie-img {
-  /* height: 10px; */
-  margin-bottom: 10px;
+.movie-image {
+  height: 200px;
+  margin-bottom: 20px;
   margin-left: 20px;
 }
 
@@ -11,7 +11,17 @@
   border: none;
   border-right: 1px solid #ccc;
   margin-top: 30px;
-  height: 300px;
+  scrollbar-width: thin;
+}
+
+.movies-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.movies-list::-webkit-scrollbar-thumb {
+  background-color: #ab1111;
+  border-radius: 20px;
+  height: 2px;
 }
 
 .movies-list-title {
@@ -29,13 +39,17 @@
 
 .movies-list-Link {
   font-family: "Courier New", Courier, monospace;
-  font-weight: 700;
-  font-size: small;
+  font-weight: 900;
+  font-size: medium;
   margin-right: 3%;
   padding-top: 40px;
   text-decoration: none;
-  color: rgb(94, 2, 2);
+  color: brown;
 }
 .movies-list-Link:hover {
   text-decoration: underline;
+}
+
+.img-div {
+  margin-bottom: 0px;
 }

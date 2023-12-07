@@ -19,12 +19,7 @@ function MoviesList() {
         {dummyapiData.map((movie, index) => {
           return (
             <div className="img-div" key={index}>
-              {/* <p>{movie.movie}</p> */}
-              <img
-                style={{ height: "250px" }}
-                className="movie-img"
-                src={dummyapiImage[index]}
-              />
+              <img className="movie-image" src={dummyapiImage[index]} />
             </div>
           );
         })}
