@@ -9,14 +9,16 @@ function GamesContextProvider(props) {
     {
       id: 1,
       name: "Tish-Tisha",
+      creator: "Abdul",
       url: "https://steady-pudding-a379e9.netlify.app/",
       image: tishTisha,
     },
     {
       id: 2,
       name: "Rock Paper Scissors",
+      creator: "Jorge",
       url: "https://rock-paper-scissors-cnk7.onrender.com/",
-      image: tishTisha,
+      image: rps,
     },
   ]);
 
