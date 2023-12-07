@@ -9,6 +9,7 @@ import MarvelApiContextProvider from "./contexts/apiContext/MarvelApiContext";
 import WatchContextProvider from "./contexts/userContext/watchContext";
 import ProductsContextProvider from "./contexts/apiContext/ProductsContext";
 import SignInContextProvider from "./contexts/userContext/SignInContext";
+import GamesContextProvider from "./contexts/apiContext/gamesContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,9 +19,11 @@ root.render(
         <MarvelApiContextProvider>
           <WatchContextProvider>
             <ProductsContextProvider>
-              <SignInContextProvider>
-                <App />
-              </SignInContextProvider>
+              <GamesContextProvider>
+                <SignInContextProvider>
+                  <App />
+                </SignInContextProvider>
+              </GamesContextProvider>
             </ProductsContextProvider>
           </WatchContextProvider>
         </MarvelApiContextProvider>

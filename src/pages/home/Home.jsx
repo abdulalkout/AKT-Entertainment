@@ -9,6 +9,7 @@ import MoviesList from "../../components/moviesList/MoviesList";
 import MarvelComicsList from "../../components/marvelComicsList/MarvelComicsList";
 import WatchList from "../../components/watch/WatchList";
 import ShoppingMallSection from "../../components/shoppingMall/ShoppingMallSection";
+import HomePageGame from "../../components/homePageGame/HomePageGame";
 
 function Home() {
   let { typicodeData } = useContext(ApiContext);
@@ -17,11 +18,12 @@ function Home() {
   return (
     <div>
       <NavBar />
+      <ShoppingMallSection />
       {watchLater.length ? <WatchList data={watchLater} /> : null}
       <MoviesPosterList data={typicodeData} />
       <MoviesList />
       <MarvelComicsList />
-      <ShoppingMallSection />
+      <HomePageGame />
     </div>
   );
 }

@@ -72,6 +72,23 @@
   display: flex;
 }
 
+.decrease-button,
+.increase-button {
+  height: 20px;
+  margin-top: 13px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(224, 198, 66);
+}
+
+.decrease-button {
+  margin-right: 5px;
+}
+
+.increase-button {
+  margin-left: 5px;
+}
+
 @media only screen and (max-width: 600px) {
   .product-card-display {
     display: flex;
