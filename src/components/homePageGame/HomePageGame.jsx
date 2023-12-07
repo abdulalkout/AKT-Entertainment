@@ -55,7 +55,7 @@ function HomePageGame() {
       <div className="reducer-buttons">
         <button
           className="game-buttons"
-          onClick={() => {
+          onMouseEnter={() => {
             dispatch({ type: 1 });
           }}
         >
@@ -63,7 +63,7 @@ function HomePageGame() {
         </button>
         <button
           className="game-buttons"
-          onClick={() => {
+          onMouseEnter={() => {
             dispatch({ type: 2 });
           }}
         >
