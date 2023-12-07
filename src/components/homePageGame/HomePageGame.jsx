@@ -5,7 +5,7 @@ import { GamesContext } from "../../contexts/apiContext/gamesContext";
 
 function HomePageGame() {
   const { games } = useContext(GamesContext);
-  const [onHover, setOnHover] = useState(".game-name-none");
+  const [onHover, setOnHover] = useState("game-name-none");
 
   const openGameUrl = () => {
     window.open(games[0].url, "_blank");

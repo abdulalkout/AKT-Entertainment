@@ -10,7 +10,7 @@ function WatchList({ data }) {
     <div>
       {signIn ? (
         <>
-          <p className="watch-header">Watch Later</p>
+          <p className="watch-header">Currently Watching </p>
           <div className="watch-list">
             {data.map((item, index) => {
               return <WatchCard key={index} item={item} />;
