@@ -9,15 +9,21 @@ function ComicsDisplay() {
   let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
   const [creators, setCreators] = useState(false);
   const { signIn } = useContext(SignInContext);
+  const [showVideo, setShowVideo] = useState({
+    video: "video-style-none",
+    content: "comic-display",
+  });
 
   const { setWatchLater, watchLater } = useContext(WatchContext);
+  const video =
+    "https://i.pinimg.com/originals/76/04/f4/7604f43aca40241444f4e35202d032ea.gif";
 
   const handleWatching = () => {
     setWatchLater([
       ...watchLater,
       { ...currentComic, name: currentComic.title, image: marvelComicPic },
     ]);
-    console.log(watchLater);
+    // console.log(watchLater);
   };
 
   const handleSignIn = () => {
@@ -26,6 +32,17 @@ function ComicsDisplay() {
     } else {
       return setWatchLater([...watchLater]);
     }
+    setShowVideo({
+      video: "video-style",
+      content: "comic-display-none",
+    });
+  };
+
+  const handledisplay = () => {
+    setShowVideo({
+      video: "video-style-none",
+      content: "comic-display",
+    });
   };
 
   const openCreator = () => {
@@ -45,33 +62,42 @@ function ComicsDisplay() {
   };
 
   return (
-    <div className="comic-display">
-      <img className="comic-img" src={marvelComicPic} />
-      <div className="comic-info">
-        <p className="comic-title">{currentComic.title}</p>
-        <p className="comic-story">
-          {currentComic.textObjects.length
-            ? currentComic.textObjects[0].text
-            : "No description available"}
-        </p>
-
-        {creators ? (
-          openCreator()
-        ) : (
-          <p onClick={showCreator} className="see-creator">
-            see creators
+    <>
+      <div className={showVideo.content}>
+        <img className="comic-img" src={marvelComicPic} />
+        <div className="comic-info">
+          <p className="comic-title">{currentComic.title}</p>
+          <p className="comic-story">
+            {currentComic.textObjects.length
+              ? currentComic.textObjects[0].text
+              : "No description available"}
           </p>
-        )}
 
-        <a className="marvel-website" href={currentComic.urls[0].url}>
-          Go to Marvel Website
-        </a>
-        <br />
-        <button onClick={handleSignIn} className="add-later">
-          Watch Now
+          {creators ? (
+            openCreator()
+          ) : (
+            <p onClick={showCreator} className="see-creator">
+              see creators
+            </p>
+          )}
+
+          <a className="marvel-website" href={currentComic.urls[0].url}>
+            Go to Marvel Website
+          </a>
+          <br />
+          <button onClick={handleSignIn} className="add-later">
+            Watch Now
+          </button>
+        </div>
+      </div>
+
+      <div className={showVideo.video}>
+        <img className="video-display" src={video} />
+        <button onClick={handledisplay} className="add-later">
+          Stop
         </button>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -61,6 +61,23 @@ body {
   cursor: pointer;
 }
 
+.video-style-none {
+  display: none;
+}
+
+.comic-display-none {
+  display: none;
+}
+
+.video-style {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  align-items: center;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     background-color: black;
