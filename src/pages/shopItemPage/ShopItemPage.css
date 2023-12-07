@@ -68,6 +68,10 @@
   background-color: rgb(224, 198, 66);
 }
 
+.add-to-cart:hover {
+  cursor: pointer;
+}
+
 .number-of-items {
   display: flex;
 }
@@ -87,6 +91,21 @@
 
 .increase-button {
   margin-left: 5px;
+}
+
+.suggestions {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 30px;
+  gap: 10px;
+  margin-left: 15px;
+  margin-bottom: 100px;
+}
+
+.suggestions-img {
+  height: 150px;
+  border-radius: 30px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ShopItemPage.css";
 import { useContext, useState } from "react";
 import { ProductsContext } from "../../contexts/apiContext/ProductsContext";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
+import { Link } from "react-router-dom";
 
 // import components //
 import NavBar from "../../components/navBar/NavBar";
 
 function ShopItemPage() {
-  const { currentProduct } = useContext(ProductsContext);
+  const { currentProduct, mallData, setCurrentProduct } =
+    useContext(ProductsContext);
   const { cart, setCart, signIn, setTotalPrice } = useContext(SignInContext);
   const [moreInfo, setMoreInfo] = useState("more-info-none");
   const [seeMore, setMore] = useState("see-more");
@@ -128,6 +130,20 @@ function ShopItemPage() {
             Add to cart
           </button>
         </div>
+      </div>
+      <div className="suggestions">
+        {mallData.map((item, index) => {
+          return (
+            <Link
+              to="/ShopItem"
+              onClick={() => {
+                setCurrentProduct(item);
+              }}
+            >
+              <img className="suggestions-img" src={item.thumbnailImage} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
