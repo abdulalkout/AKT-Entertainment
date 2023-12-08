@@ -20,12 +20,6 @@ function NavBar() {
     setOnhover("on-hover-bar-none");
   };
 
-  useEffect(() => {
-    cart.map((item) => {
-      setTotalPrice(totalPrice + item.basePrice);
-    });
-  }, [cart]);
-
   return (
     <div className="sticky-nav">
       <div className="navbar">

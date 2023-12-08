@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./UserLogs.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
 import { Link } from "react-router-dom";
 import { ProductsContext } from "../../contexts/apiContext/ProductsContext";
@@ -11,14 +11,9 @@ function UserLogs() {
     useContext(SignInContext);
 
   const deletItem = (item) => {
-    const newCart = cart.filter((filtereditem, i) => {
-      if (filtereditem.id !== item.id) {
-        return item;
-      }
-    });
-    cart.map((item) => {
-      setTotalPrice(totalPrice + item.basePrice);
-    });
+    const newCart = cart.filter((filteredItem) => filteredItem.id !== item.id);
+
+    // Update the cart and recalculate the total price
     setCart(newCart);
   };
 
