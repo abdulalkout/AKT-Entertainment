@@ -52,6 +52,7 @@
 
 .game-buttons {
   height: 50px;
+  width: 50px;
   border: none;
   box-shadow: 2px 2px 5px rgba(192, 22, 22, 0.2);
   background-color: brown;

@@ -14,13 +14,20 @@ const reducer = (state, action) => {
       return {
         id: 1,
       };
+    case 3:
+      return {
+        id: 2,
+      };
+    case 4:
+      return {
+        id: 3,
+      };
   }
 };
 
 function HomePageGame() {
   const { games } = useContext(GamesContext);
   const [onHover, setOnHover] = useState("game-name-none");
-  const [stateNumber, setStateNumber] = useState(1);
 
   const [state, dispatch] = useReducer(reducer, {
     id: 0,
@@ -41,7 +48,6 @@ function HomePageGame() {
           }}
         >
           {games[state.id].name}
-          {/* <p>{games[state.id].creator}</p> */}
         </p>
         <img
           className="game-image"
@@ -68,6 +74,22 @@ function HomePageGame() {
           }}
         >
           Jorge
+        </button>
+        <button
+          className="game-buttons"
+          onMouseEnter={() => {
+            dispatch({ type: 3 });
+          }}
+        >
+          Molud
+        </button>
+        <button
+          className="game-buttons"
+          onMouseEnter={() => {
+            dispatch({ type: 4 });
+          }}
+        >
+          Affaf
         </button>
       </div>
     </div>
