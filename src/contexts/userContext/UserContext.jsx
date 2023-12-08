@@ -1,44 +1,44 @@
-import React, { createContext, useReducer } from "react";
+// import React, { createContext, useReducer } from "react";
 
-export const UserContext = createContext();
+// export const UserContext = createContext();
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "later":
-      return {
-        ...state,
-        watchLater: [...state.watchLater, action.payload],
-      };
-    case "current":
-      return {
-        ...state,
-        currentWatch: [...state.currentWatch, action.payload],
-      };
-    default:
-      return state;
-  }
-};
+// const reducer = (state, action) => {
+//   switch (action.type) {
+//     case "later":
+//       return {
+//         ...state,
+//         watchLater: [...state.watchLater, action.payload],
+//       };
+//     case "current":
+//       return {
+//         ...state,
+//         currentWatch: [...state.currentWatch, action.payload],
+//       };
+//     default:
+//       return state;
+//   }
+// };
 
-const initialState = {
-  currentWatch: [],
-  watchLater: [],
-};
+// const initialState = {
+//   currentWatch: [],
+//   watchLater: [],
+// };
 
-function UserContextProvider(props) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+// function UserContextProvider(props) {
+//   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addToWatchList = (type, item) => {
-    dispatch({ type, payload: item });
-  };
+//   const addToWatchList = (type, item) => {
+//     dispatch({ type, payload: item });
+//   };
 
-  return (
-    <UserContext.Provider value={{ state, addToWatchList }}>
-      {props.children}
-    </UserContext.Provider>
-  );
-}
+//   return (
+//     <UserContext.Provider value={{ state, addToWatchList }}>
+//       {props.children}
+//     </UserContext.Provider>
+//   );
+// }
 
-export default UserContextProvider;
+// export default UserContextProvider;
 
 // const handleAddToWatchLater = () => {
 //     const itemToAdd = [

@@ -14,13 +14,27 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.delet-item {
+.delet-item,
+.delet-watch {
   background-color: brown;
   border: none;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
+.delet-item:hover {
+  cursor: pointer;
+}
+
 .price-tag {
   margin-left: 20px;
+}
+
+.delet-watch {
+  margin-left: 20px;
+  height: 30px;
+}
+
+.delet-watch-none {
+  display: none;
 }

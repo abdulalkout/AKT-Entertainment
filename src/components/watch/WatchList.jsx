@@ -1,6 +1,6 @@
 import React from "react";
 import "./WatchList.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
 import WatchCard from "./WatchCard";
 
