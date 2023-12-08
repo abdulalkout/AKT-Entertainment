@@ -6,7 +6,7 @@
   padding-top: 40px;
   text-decoration: none;
   color: aliceblue;
-  margin-left: 20px;
+  margin-left: 35px;
 }
 
 .item-info {
@@ -35,6 +35,15 @@
   height: 30px;
 }
 
-.delet-watch-none {
-  display: none;
+.empty-cart-div {
+  margin-left: 25px;
+}
+
+.shop-now-lik {
+  text-decoration: none;
+  color: brown;
+}
+
+.shop-now-lik:hover {
+  text-decoration: underline;
 }
