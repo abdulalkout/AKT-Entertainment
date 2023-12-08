@@ -8,7 +8,6 @@ import ShopingMallCard from "./ShopingMallCard";
 
 function ShopingMallDisplay() {
   const { mallData, setMallData } = useContext(ProductsContext);
-  const [initialMallData] = useState(mallData);
   const [categoryCheckboxes, setCategoryCheckboxes] = useState({
     Smartphone: false,
     Tablet: false,

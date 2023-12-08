@@ -2,7 +2,6 @@ import React, { useState, useReducer } from "react";
 import "./HomePageGame.css";
 import { useContext } from "react";
 import { GamesContext } from "../../contexts/apiContext/gamesContext";
-import { type } from "@testing-library/user-event/dist/type";
 
 const reducer = (state, action) => {
   switch (action.type) {

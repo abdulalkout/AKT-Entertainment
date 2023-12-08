@@ -1,0 +1,26 @@
+.cart-title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  font-size: large;
+  margin-right: 3%;
+  padding-top: 40px;
+  text-decoration: none;
+  color: aliceblue;
+  margin-left: 20px;
+}
+
+.item-info {
+  margin-right: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.delet-item {
+  background-color: brown;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.price-tag {
+  margin-left: 20px;
+}

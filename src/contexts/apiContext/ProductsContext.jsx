@@ -6,6 +6,7 @@ export const ProductsContext = createContext();
 function ProductsContextProvider(props) {
   const url = "https://dummyapi.online/api/products";
   const [mallData, setMallData] = useState([]);
+  const [allMallData, setAllMallData] = useState([]);
   const [currentProduct, setCurrentProduct] = useState();
 
   const getProducts = async () => {
@@ -13,6 +14,7 @@ function ProductsContextProvider(props) {
       const response = await fetch(url);
       const data = await response.json();
       setMallData(data);
+      setAllMallData(data);
       console.log(data);
     } catch (err) {
       console.log(err);
@@ -24,7 +26,13 @@ function ProductsContextProvider(props) {
   }, []);
   return (
     <ProductsContext.Provider
-      value={{ mallData, setMallData, setCurrentProduct, currentProduct }}
+      value={{
+        mallData,
+        setMallData,
+        setCurrentProduct,
+        currentProduct,
+        allMallData,
+      }}
     >
       {props.children}
     </ProductsContext.Provider>

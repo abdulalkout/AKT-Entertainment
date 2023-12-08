@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import "./SignInPage.css";
 import { useState, useContext } from "react";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
+
 // import components //
 import NavBar from "../../components/navBar/NavBar";
+import UserLogs from "../../components/userLogs/UserLogs";
 
 function SignInPage() {
   const [email, setEmail] = useState("");
@@ -149,20 +151,23 @@ function SignInPage() {
               <button className="signin-button" type="submit">
                 Sign In
               </button>
-            </form>{" "}
+            </form>
           </div>
           <p onClick={showSignup} className={signoutDisplay.signup}>
             Sign Up
           </p>
         </>
       ) : (
-        <button
-          onClick={handleSignout}
-          className={signoutDisplay.signout}
-          type="submit"
-        >
-          Sign Out
-        </button>
+        <>
+          <button
+            onClick={handleSignout}
+            className={signoutDisplay.signout}
+            type="submit"
+          >
+            Sign Out
+          </button>
+          <UserLogs />
+        </>
       )}
     </div>
   );
