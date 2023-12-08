@@ -5,7 +5,6 @@ export const ApiContext = createContext();
 
 function ApiContextProvider(props) {
   const [typicodeData, setTypicodeData] = useState([]);
-  //   const [rickAndMortyData, setRickAndMortyData] = useState([]);
   const [dummyapiData, setDummyapiData] = useState([]);
   const url1 = "https://dummyapi.online/api/movies";
   const url2 =
@@ -34,17 +33,15 @@ function ApiContextProvider(props) {
     }
   };
 
+  const mergeData = () => {
+    setDummyapiData((prevdummydata) => {});
+  };
+
   useEffect(() => {
     getTypicodeApi();
     getRickAndMortyApi();
+    // mergeData();
   }, []);
-
-  useEffect(() => {
-    // console.log(typicodeData);
-    // console.log(dummyapiData);
-    // console.log(typicodeData);
-    // dummyapiInsertImg();
-  }, [typicodeData, dummyapiData]);
 
   return (
     <ApiContext.Provider value={{ typicodeData, dummyapiData, dummyapiImage }}>

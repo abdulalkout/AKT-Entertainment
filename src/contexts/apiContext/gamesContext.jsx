@@ -3,6 +3,7 @@ import tishTisha from "../../images/Tish-Tisha.jpg";
 import rps from "../../images/RPS.png";
 import mg from "../../images/memoryGame.png";
 import race from "../../images/Race.png";
+import treasure from "../../images/treasure.png";
 
 export const GamesContext = createContext();
 
@@ -35,6 +36,13 @@ function GamesContextProvider(props) {
       creator: "Affaf",
       url: "https://affaf04.github.io/Race-to-the-top/",
       image: race,
+    },
+    {
+      id: 5,
+      name: "Treasure-Hunt",
+      creator: "Kit",
+      url: "https://treasure-hunt-play.onrender.com/",
+      image: treasure,
     },
   ]);
 
