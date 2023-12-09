@@ -6,7 +6,8 @@ import { SignInContext } from "../../contexts/userContext/SignInContext";
 
 function NavBar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { signIn, cart, totalPrice, setTotalPrice } = useContext(SignInContext);
+  const { signIn, cart, totalPrice, setTotalPrice, user } =
+    useContext(SignInContext);
   const [onhover, setOnhover] = useState("on-hover-bar-none");
 
   const toggleMobileMenu = () => {
@@ -43,7 +44,7 @@ function NavBar() {
             className="nav-links"
             onMouseEnter={displayCartItems}
           >
-            {signIn ? "SignOut" : "SignIn"}
+            {signIn ? `${user.name}` : "SignIn"}
           </Link>
         </div>
 

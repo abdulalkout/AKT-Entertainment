@@ -10,6 +10,7 @@ import UserLogs from "../../components/userLogs/UserLogs";
 function SignInPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [signoutDisplay, setSignoutDisplay] = useState({
     form: "signin-form",
@@ -17,7 +18,8 @@ function SignInPage() {
     form2: "signin-form-none",
     signup: "signup-title",
   });
-  const { setSignIn, users, setUsers, signIn } = useContext(SignInContext);
+  const { setSignIn, users, setUsers, signIn, user, setUser } =
+    useContext(SignInContext);
 
   const checkUser = () => {
     users.map((user) => {
@@ -29,6 +31,7 @@ function SignInPage() {
           form2: "signin-form-none",
           signup: "signup-title-none",
         });
+        setUser(user);
       }
     });
   };
@@ -51,7 +54,11 @@ function SignInPage() {
   const handleNewUserSubmit = (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      let newUser = { email: { email }, password: { password } };
+      let newUser = {
+        email: email,
+        password: password,
+        name: name,
+      };
       setUsers([...users, newUser]);
       setSignoutDisplay({
         form: "signin-form-none",
@@ -60,6 +67,8 @@ function SignInPage() {
         signup: "signup-title-none",
       });
       setSignIn(true);
+      setUser(newUser);
+      // console.log(newUser);
     }
   };
 
@@ -119,6 +128,15 @@ function SignInPage() {
               onSubmit={handleNewUserSubmit}
             >
               <p className="sign-header">SignUp</p>
+              <label htmlFor="name">name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
               <label htmlFor="email">Email:</label>
               <input
                 type="email"

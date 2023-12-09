@@ -6,6 +6,7 @@ export const SignInContext = createContext();
 function SignInContextProvider(props) {
   const [signIn, setSignIn] = useState(false);
   const [users, setUsers] = useState(dbUsers);
+  const [user, setUser] = useState();
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -28,6 +29,8 @@ function SignInContextProvider(props) {
         setCart,
         totalPrice,
         setTotalPrice,
+        user,
+        setUser,
       }}
     >
       {props.children}
