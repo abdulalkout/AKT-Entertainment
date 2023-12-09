@@ -56,6 +56,30 @@
   display: none;
 }
 
+.subscriptions {
+  display: flex;
+  gap: 40px;
+  width: 700px;
+  justify-content: flex-start;
+  position: absolute;
+  left: 15%;
+}
+
+.sign-up-display {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 65%;
+  top: 35%;
+}
+
+.subscription-version {
+  background-color: brown;
+  width: 250px;
+  height: 200px;
+  border-radius: 30px;
+}
+
 @media only screen and (max-width: 600px) {
   .signin-form {
     display: flex;

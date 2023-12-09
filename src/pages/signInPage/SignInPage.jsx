@@ -18,7 +18,7 @@ function SignInPage() {
     form2: "signin-form-none",
     signup: "signup-title",
   });
-  const { setSignIn, users, setUsers, signIn, user, setUser } =
+  const { setSignIn, users, setUsers, signIn, user, setUser, cart } =
     useContext(SignInContext);
 
   const checkUser = () => {
@@ -68,7 +68,6 @@ function SignInPage() {
       });
       setSignIn(true);
       setUser(newUser);
-      // console.log(newUser);
     }
   };
 
@@ -91,6 +90,7 @@ function SignInPage() {
       });
     }
   }, [signIn]);
+
   return (
     <div>
       <NavBar />
@@ -127,48 +127,83 @@ function SignInPage() {
               className={signoutDisplay.form2}
               onSubmit={handleNewUserSubmit}
             >
-              <p className="sign-header">SignUp</p>
-              <label htmlFor="name">name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+              {/* <p className="sign-header">SignUp</p> */}
+              <div className="subscriptions">
+                <div className="subscription-version">
+                  <p>Basic version</p>
+                  <p>Shop Only</p>
+                  <p>Price : Free</p>
+                  <label htmlFor="free">
+                    free
+                    <input
+                      type="checkbox"
+                      id="free"
+                      name="free"
+                      // checked="{}"
+                      // onChange={() => {}}
+                    />
+                  </label>
+                </div>
+                <div className="subscription-version">
+                  <p>premium version</p>
+                  <p>All inclusive</p>
+                  <p>Price : $20/M</p>
+                  <label htmlFor="premium">
+                    premium
+                    <input
+                      type="checkbox"
+                      id="premium"
+                      name="premium"
+                      // checked="{}"
+                      // onChange={() => {}}
+                    />
+                  </label>
+                </div>
+              </div>
 
-              <label htmlFor="password">Password:</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <label htmlFor="Repeat password">Repeat Password:</label>
-              <input
-                type="password"
-                id="Repeat password"
-                name="Repeat password"
-                value={repeatPassword}
-                onChange={(e) => setRepeatPassword(e.target.value)}
-                required
-              />
+              <div className="sign-up-display">
+                <label htmlFor="name">name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
 
-              <button className="signin-button" type="submit">
-                Sign In
-              </button>
+                <label htmlFor="password">Password:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <label htmlFor="Repeat password">Repeat Password:</label>
+                <input
+                  type="password"
+                  id="Repeat password"
+                  name="Repeat password"
+                  value={repeatPassword}
+                  onChange={(e) => setRepeatPassword(e.target.value)}
+                  required
+                />
+
+                <button className="signin-button" type="submit">
+                  Sign In
+                </button>
+              </div>
             </form>
           </div>
           <p onClick={showSignup} className={signoutDisplay.signup}>
