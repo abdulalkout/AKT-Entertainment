@@ -11,6 +11,7 @@ function SignInPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [subscription, setSubscription] = useState();
   const [repeatPassword, setRepeatPassword] = useState("");
   const [signoutDisplay, setSignoutDisplay] = useState({
     form: "signin-form",
@@ -18,7 +19,7 @@ function SignInPage() {
     form2: "signin-form-none",
     signup: "signup-title",
   });
-  const { setSignIn, users, setUsers, signIn, user, setUser, cart } =
+  const { setSignIn, users, setUsers, signIn, setUser, cart } =
     useContext(SignInContext);
 
   const checkUser = () => {
@@ -129,35 +130,52 @@ function SignInPage() {
             >
               {/* <p className="sign-header">SignUp</p> */}
               <div className="subscriptions">
-                <div className="subscription-version">
+                <div
+                  className="subscription-version"
+                  onClick={() => {
+                    setSubscription(false);
+                    console.log(subscription);
+                  }}
+                >
                   <p>Basic version</p>
                   <p>Shop Only</p>
                   <p>Price : Free</p>
-                  <label htmlFor="free">
+                  {/* <label htmlFor="free">
                     free
                     <input
                       type="checkbox"
                       id="free"
                       name="free"
-                      // checked="{}"
-                      // onChange={() => {}}
+                      checked={subscription}
+                      onChange={() => {
+                        setSubscription(false);
+                      }}
                     />
-                  </label>
+                  </label> */}
                 </div>
-                <div className="subscription-version">
+                <div
+                  className="subscription-version"
+                  onClick={() => {
+                    setSubscription(true);
+                    console.log(subscription);
+                  }}
+                >
                   <p>premium version</p>
                   <p>All inclusive</p>
                   <p>Price : $20/M</p>
-                  <label htmlFor="premium">
+                  {/* <label htmlFor="premium">
                     premium
                     <input
                       type="checkbox"
                       id="premium"
                       name="premium"
-                      // checked="{}"
-                      // onChange={() => {}}
+                      checked={subscription}
+                      onChange={() => {
+                        setSubscription(true);
+                        console.log(subscription);
+                      }}
                     />
-                  </label>
+                  </label> */}
                 </div>
               </div>
 
