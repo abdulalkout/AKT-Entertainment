@@ -21,6 +21,10 @@ const reducer = (state, action) => {
       return {
         id: 3,
       };
+    case 5:
+      return {
+        id: 4,
+      };
   }
 };
 
@@ -89,6 +93,14 @@ function HomePageGame() {
           }}
         >
           Affaf
+        </button>
+        <button
+          className="game-buttons"
+          onMouseEnter={() => {
+            dispatch({ type: 5 });
+          }}
+        >
+          Kit
         </button>
       </div>
     </div>
