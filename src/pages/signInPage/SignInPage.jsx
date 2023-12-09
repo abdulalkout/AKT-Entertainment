@@ -19,6 +19,10 @@ function SignInPage() {
     form2: "signin-form-none",
     signup: "signup-title",
   });
+  const [viewHover, setViewHover] = useState({
+    basic: "subscription-version",
+    premium: "subscription-version",
+  });
   const { setSignIn, users, setUsers, signIn, setUser, cart } =
     useContext(SignInContext);
 
@@ -59,6 +63,7 @@ function SignInPage() {
         email: email,
         password: password,
         name: name,
+        subscription: subscription,
       };
       setUsers([...users, newUser]);
       setSignoutDisplay({
@@ -91,6 +96,24 @@ function SignInPage() {
       });
     }
   }, [signIn]);
+
+  const handleView = (id) => {
+    if (id === 1) {
+      setViewHover((prevHover) => ({
+        ...prevHover,
+
+        basic: "subscription-version hover",
+        premium: "subscription-version",
+      }));
+    } else if (id === 2) {
+      setViewHover((prevHover) => ({
+        ...prevHover,
+
+        basic: "subscription-version",
+        premium: "subscription-version hover",
+      }));
+    }
+  };
 
   return (
     <div>
@@ -131,51 +154,30 @@ function SignInPage() {
               {/* <p className="sign-header">SignUp</p> */}
               <div className="subscriptions">
                 <div
-                  className="subscription-version"
+                  className={viewHover.basic}
                   onClick={() => {
                     setSubscription(false);
-                    console.log(subscription);
+                    handleView(1);
                   }}
                 >
-                  <p>Basic version</p>
-                  <p>Shop Only</p>
-                  <p>Price : Free</p>
-                  {/* <label htmlFor="free">
-                    free
-                    <input
-                      type="checkbox"
-                      id="free"
-                      name="free"
-                      checked={subscription}
-                      onChange={() => {
-                        setSubscription(false);
-                      }}
-                    />
-                  </label> */}
+                  <div className="version-div ">
+                    <p className="title-for-version">Basic version</p>
+                    <p className="varsion-discription">Shop Only</p>
+                    <p className="varsion-discription">Price : Free</p>
+                  </div>
                 </div>
                 <div
-                  className="subscription-version"
+                  className={viewHover.premium}
                   onClick={() => {
                     setSubscription(true);
-                    console.log(subscription);
+                    handleView(2);
                   }}
                 >
-                  <p>premium version</p>
-                  <p>All inclusive</p>
-                  <p>Price : $20/M</p>
-                  {/* <label htmlFor="premium">
-                    premium
-                    <input
-                      type="checkbox"
-                      id="premium"
-                      name="premium"
-                      checked={subscription}
-                      onChange={() => {
-                        setSubscription(true);
-                        console.log(subscription);
-                      }}
-                    />
-                  </label> */}
+                  <div className="version-div">
+                    <p className="title-for-version">premium version</p>
+                    <p className="varsion-discription">All inclusive</p>
+                    <p className="varsion-discription">Price : $20/M</p>
+                  </div>
                 </div>
               </div>
 
@@ -219,7 +221,7 @@ function SignInPage() {
                 />
 
                 <button className="signin-button" type="submit">
-                  Sign In
+                  SignUp
                 </button>
               </div>
             </form>

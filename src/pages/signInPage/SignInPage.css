@@ -37,8 +37,8 @@
   margin-left: 40%;
   height: 200px;
   width: 500px;
-  /* background-color: aliceblue;
-  color: black; */
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
 }
 
 .signup-title {
@@ -78,6 +78,39 @@
   width: 250px;
   height: 200px;
   border-radius: 30px;
+  transition: box-shadow 0.3s ease;
+}
+
+.subscription-version:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(237, 231, 231, 0.758);
+}
+
+.hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(237, 231, 231, 0.758);
+}
+
+.signin-button {
+  background-color: brown;
+  border: none;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.signin-button:hover {
+  cursor: pointer;
+}
+
+.version-div {
+  text-align: center;
+  margin-top: 20%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title-for-version {
+  font-size: large;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 600px) {

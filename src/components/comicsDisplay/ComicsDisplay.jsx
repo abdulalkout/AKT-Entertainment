@@ -8,7 +8,7 @@ function ComicsDisplay() {
   const { currentComic } = useContext(MarvelApiContext);
   let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
   const [creators, setCreators] = useState(false);
-  const { signIn } = useContext(SignInContext);
+  const { signIn, user } = useContext(SignInContext);
   const [showVideo, setShowVideo] = useState({
     video: "video-style-none",
     content: "comic-display",
@@ -27,7 +27,7 @@ function ComicsDisplay() {
   };
 
   const handleSignIn = () => {
-    if (signIn) {
+    if (signIn && user.subscription) {
       handleWatching();
     } else {
       return setWatchLater([...watchLater]);
