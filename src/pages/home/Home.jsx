@@ -20,8 +20,8 @@ function Home() {
     <div>
       <NavBar />
       <ShoppingMallSection />
-      {watchLater.length ? <WatchList data={watchLater} /> : null}
       <MoviesPosterList data={typicodeData} />
+      {watchLater.length ? <WatchList data={watchLater} /> : null}
       <MoviesList />
       <MarvelComicsList />
       <HomePageGame />

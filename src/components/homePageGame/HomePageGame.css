@@ -1,7 +1,7 @@
 .game-image {
-  height: 300px;
-  width: 700px;
-  margin-left: 23%;
+  height: 400px;
+  width: 800px;
+  /* margin-left: 23%; */
 }
 .game-section {
   margin-bottom: 150px;
@@ -41,6 +41,7 @@
 
 .game-card {
   position: relative;
+  text-align: center;
 }
 
 .reducer-buttons {
