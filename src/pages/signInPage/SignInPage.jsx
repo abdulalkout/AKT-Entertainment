@@ -2,17 +2,21 @@ import React, { useEffect } from "react";
 import "./SignInPage.css";
 import { useState, useContext } from "react";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
+import { WatchContext } from "../../contexts/userContext/watchContext";
 
 // import components //
 import NavBar from "../../components/navBar/NavBar";
 import UserLogs from "../../components/userLogs/UserLogs";
 
 function SignInPage() {
+  // useState user signUp
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [subscription, setSubscription] = useState();
   const [repeatPassword, setRepeatPassword] = useState("");
+
+  // useState veiw handlers
   const [signoutDisplay, setSignoutDisplay] = useState({
     form: "signin-form",
     signout: "signout-none",
@@ -23,8 +27,11 @@ function SignInPage() {
     basic: "subscription-version",
     premium: "subscription-version",
   });
-  const { setSignIn, users, setUsers, signIn, setUser, cart } =
+
+  // Import contexts
+  const { setSignIn, users, setUsers, signIn, setUser, cart, user } =
     useContext(SignInContext);
+  const { watchLater, setWatchLater } = useContext(WatchContext);
 
   const checkUser = () => {
     users.map((user) => {
@@ -37,9 +44,28 @@ function SignInPage() {
           signup: "signup-title-none",
         });
         setUser(user);
+        // console.log(user);
       }
     });
   };
+
+  // const appendLogsForUser = () => {
+  //   const userIndex = users.findIndex(
+  //     (userInDB) => userInDB.email === user.email
+  //   );
+  //   console.log(userIndex);
+  //   if (userIndex >= 0) {
+  //     setUsers((prevUsers) => {
+  //       const updatedUsers = [...prevUsers];
+
+  //       updatedUsers[userIndex] = {
+  //         ...updatedUsers[userIndex],
+  //         watched: watchLater,
+  //       };
+  //     });
+  //   }
+  //   console.log(users);
+  // };
 
   const handleSignout = () => {
     setSignIn(false);
@@ -49,7 +75,18 @@ function SignInPage() {
       form2: "signin-form-none",
       signup: "signup-title",
     });
+    setUser((prevUser) => ({
+      ...prevUser,
+      watched: watchLater,
+    }));
+    // console.log(user);
+    // appendLogsForUser();
   };
+
+  useEffect(() => {
+    // console.log(user.watched);
+    console.log(user);
+  }, [user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

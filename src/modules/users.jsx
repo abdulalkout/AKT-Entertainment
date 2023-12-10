@@ -5,6 +5,7 @@ const dbUsers = [
     subscription: true,
     name: "Abdul",
     cart: [],
+    watched: [],
   },
   {
     email: "abdul.alkout@gmail.com",
@@ -12,6 +13,7 @@ const dbUsers = [
     subscription: false,
     name: "Alkout",
     cart: [],
+    watched: [],
   },
   {
     email: "jordan@gmail.com",
@@ -19,6 +21,7 @@ const dbUsers = [
     subscription: true,
     name: "Jordan",
     cart: [],
+    watched: [],
   },
 ];
 
