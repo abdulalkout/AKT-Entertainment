@@ -5,16 +5,25 @@ import { WatchContext } from "../../contexts/userContext/watchContext";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
 
 function ComicsDisplay() {
+  // Context used
   const { currentComic } = useContext(MarvelApiContext);
-  let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
+  const { setWatchLater, watchLater } = useContext(WatchContext);
+  const { signIn, user, setUser } = useContext(SignInContext);
+  // State
   const [creators, setCreators] = useState(false);
-  const { signIn, user } = useContext(SignInContext);
+
+  // classes change with useState
   const [showVideo, setShowVideo] = useState({
     video: "video-style-none",
     content: "comic-display",
   });
+  const [subscribeButtonPopup, setSubscribeButtonPopup] = useState({
+    watchClass: "add-later",
+    subscribeClass: "add-later-none",
+  });
 
-  const { setWatchLater, watchLater } = useContext(WatchContext);
+  // Variables
+  let marvelComicPic = `${currentComic.thumbnail.path}.${currentComic.thumbnail.extension}`;
   const video =
     "https://i.pinimg.com/originals/76/04/f4/7604f43aca40241444f4e35202d032ea.gif";
 
@@ -29,9 +38,26 @@ function ComicsDisplay() {
   const handleSignIn = () => {
     if (signIn && user.subscription) {
       handleWatching();
+      setShowVideo({
+        video: "video-style",
+        content: "comic-display-none",
+      });
+    } else if (signIn && user.subscription === false) {
+      console.log("inside the fuction");
+      setSubscribeButtonPopup({
+        watchClass: "add-later-none",
+        subscribeClass: "add-later subscribe-button",
+      });
     } else {
       return setWatchLater([...watchLater]);
     }
+  };
+
+  const handleSubscription = () => {
+    setUser({
+      ...user,
+      subscription: true,
+    });
     setShowVideo({
       video: "video-style",
       content: "comic-display-none",
@@ -85,8 +111,19 @@ function ComicsDisplay() {
             Go to Marvel Website
           </a>
           <br />
-          <button onClick={handleSignIn} className="add-later">
+          <button
+            onClick={handleSignIn}
+            className={subscribeButtonPopup.watchClass}
+          >
             Watch Now
+          </button>
+          <button
+            onClick={handleSubscription}
+            className={subscribeButtonPopup.subscribeClass}
+          >
+            Subscribe To watch
+            <br />
+            Only for $20
           </button>
         </div>
       </div>

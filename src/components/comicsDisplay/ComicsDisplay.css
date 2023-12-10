@@ -78,6 +78,16 @@ body {
   margin-top: 5%;
 }
 
+.subscribe-button {
+  height: 50px;
+  background-color: burlywood;
+  font-weight: 700;
+}
+
+.add-later-none {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     background-color: black;
