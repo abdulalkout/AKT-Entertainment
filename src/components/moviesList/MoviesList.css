@@ -16,12 +16,13 @@
 
 .movies-list::-webkit-scrollbar {
   width: 5px;
+  height: 7px;
 }
 
 .movies-list::-webkit-scrollbar-thumb {
   background-color: #ab1111;
   border-radius: 20px;
-  height: 2px;
+  width: auto;
 }
 
 .movies-list-title {

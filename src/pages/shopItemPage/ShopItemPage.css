@@ -105,6 +105,7 @@
 
 .suggestions::-webkit-scrollbar {
   width: 12px;
+  height: 7px;
 }
 
 .suggestions::-webkit-scrollbar-thumb {

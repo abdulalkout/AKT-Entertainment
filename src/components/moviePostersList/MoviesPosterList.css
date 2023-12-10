@@ -5,7 +5,18 @@
   border: none;
   border-right: 1px solid #ccc;
   margin-top: 30px;
-  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.postersList::-webkit-scrollbar {
+  width: 5px;
+  height: 7px;
+}
+
+.postersList::-webkit-scrollbar-thumb {
+  background-color: #ab1111;
+  border-radius: 20px;
+  width: auto;
 }
 
 .poster {
