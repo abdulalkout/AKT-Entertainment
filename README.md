@@ -49,12 +49,17 @@ The project utilizes the following technologies:
 
 ## Screenshots/GIFs
 
-[Include screenshots or GIFs of your application to visually showcase different features. Add captions or descriptions as needed.]
+![Entertainment Comics](./src/images/website/comicsDisplay.png)
+![Entertainment SignIn](./src/images/website/signInPage.png)
+![Entertainment SignIn](./src/images/website/comics_mobile.png)
+![Entertainment Home Mobile](./src/images/website/home_mobile.png)
+![Entertainment Comics Mobile](./src/images/website/comics_mobile.png)
 
 ## Contact
 
 For any questions or feedback, feel free to reach out:
 
-- Email: [Your Email Address]
+- Email: Abdul.alkout@gmail.com
+- LinkedIn: https://www.linkedin.com/in/abdul-alkout/
 
 Feel free to explore and enjoy the Entertainment Platform! Thank you for choosing our platform for your entertainment needs.
