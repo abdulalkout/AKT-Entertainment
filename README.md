@@ -51,9 +51,7 @@ The project utilizes the following technologies:
 
 ![Entertainment Comics](./src/images/website/comicsDisplay.png)
 ![Entertainment SignIn](./src/images/website/signInPage.png)
-![Entertainment SignIn](./src/images/website/comics_mobile.png)
 ![Entertainment Home Mobile](./src/images/website/home_mobile.png)
-![Entertainment Comics Mobile](./src/images/website/comics_mobile.png)
 
 ## Contact
 
