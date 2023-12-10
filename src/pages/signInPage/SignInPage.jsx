@@ -29,7 +29,7 @@ function SignInPage() {
   });
 
   // Import contexts
-  const { setSignIn, users, setUsers, signIn, setUser, cart, user } =
+  const { setSignIn, users, setUsers, signIn, setUser, cart, user, setCart } =
     useContext(SignInContext);
   const { watchLater, setWatchLater } = useContext(WatchContext);
 
@@ -78,7 +78,11 @@ function SignInPage() {
     setUser((prevUser) => ({
       ...prevUser,
       watched: watchLater,
+      cart: cart,
     }));
+
+    setWatchLater([]);
+    setCart([]);
     // console.log(user);
     // appendLogsForUser();
   };

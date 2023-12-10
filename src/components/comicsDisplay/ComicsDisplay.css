@@ -72,10 +72,14 @@ body {
 .video-style {
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 1000px;
   align-items: center;
   margin-left: 20%;
   margin-top: 5%;
+}
+
+.video-display {
+  height: 500px;
 }
 
 .subscribe-button {
@@ -86,6 +90,10 @@ body {
 
 .add-later-none {
   display: none;
+}
+
+.stop-wathcing {
+  width: 100px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -153,9 +161,15 @@ body {
   }
   .video-display {
     width: 500px;
+    margin-left: 110px;
   }
 
   .stop-wathcing {
     width: 100px;
+    margin-left: 20vw;
+  }
+
+  .video-display {
+    height: 300px;
   }
 }
