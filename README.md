@@ -14,7 +14,9 @@ This is a React-based entertainment platform that brings together movies, comics
 
 ## How to Access
 
-To explore the entertainment platform, simply open it in your web browser. No installation is required, as it will be deployed on the internet.
+To explore the entertainment platform, simply open it in your web browser. No installation is required
+
+https://aktentertainment.netlify.app/
 
 ## Code Structure
 
