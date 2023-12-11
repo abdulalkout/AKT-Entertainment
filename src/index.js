@@ -10,6 +10,7 @@ import WatchContextProvider from "./contexts/userContext/watchContext";
 import ProductsContextProvider from "./contexts/apiContext/ProductsContext";
 import SignInContextProvider from "./contexts/userContext/SignInContext";
 import GamesContextProvider from "./contexts/apiContext/gamesContext";
+import ProfileContextProvider from "./contexts/userContext/ProfileContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,9 +21,11 @@ root.render(
           <WatchContextProvider>
             <ProductsContextProvider>
               <GamesContextProvider>
-                <SignInContextProvider>
-                  <App />
-                </SignInContextProvider>
+                <ProfileContextProvider>
+                  <SignInContextProvider>
+                    <App />
+                  </SignInContextProvider>
+                </ProfileContextProvider>
               </GamesContextProvider>
             </ProductsContextProvider>
           </WatchContextProvider>

@@ -1,0 +1,34 @@
+.footer-link {
+  color: aliceblue;
+  background-color: brown;
+  height: 150px;
+  text-align: center;
+}
+
+.footer-name {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  font-size: xx-large;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 20px;
+  /* height: 100px; */
+}
+
+.footer-name:hover {
+  color: aliceblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+  .footer-name {
+    font-family: "Courier New", Courier, monospace;
+    font-size: x-large;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 20px;
+    /* height: 100px; */
+  }
+}

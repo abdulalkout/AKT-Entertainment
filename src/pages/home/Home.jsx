@@ -11,6 +11,7 @@ import MarvelComicsList from "../../components/marvelComicsList/MarvelComicsList
 import WatchList from "../../components/watch/WatchList";
 import ShoppingMallSection from "../../components/shoppingMall/ShoppingMallSection";
 import HomePageGame from "../../components/homePageGame/HomePageGame";
+import Footer from "../../components/footer/Footer";
 
 function Home() {
   let { typicodeData } = useContext(ApiContext);
