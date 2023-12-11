@@ -28,12 +28,12 @@ function MoviesPage() {
   return (
     <>
       <NavBar />
-      <input
+      {/* <input
         className="search-input"
         type="text"
         placeholder="Search"
         onChange={searchFunction}
-      />
+      /> */}
 
       <MoviesPageList data={[dummyapiData, dummyapiImage]} />
     </>

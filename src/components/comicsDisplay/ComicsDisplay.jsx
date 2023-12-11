@@ -3,6 +3,7 @@ import "./ComicsDisplay.css";
 import { MarvelApiContext } from "../../contexts/apiContext/MarvelApiContext";
 import { WatchContext } from "../../contexts/userContext/watchContext";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
+import MarvelComicsList from "../marvelComicsList/MarvelComicsList";
 
 function ComicsDisplay() {
   // Context used
@@ -49,7 +50,8 @@ function ComicsDisplay() {
         subscribeClass: "add-later subscribe-button",
       });
     } else {
-      return setWatchLater([...watchLater]);
+      setWatchLater([...watchLater]);
+      alert("Please sign in first");
     }
   };
 
@@ -85,6 +87,10 @@ function ComicsDisplay() {
 
   const showCreator = () => {
     setCreators(!creators);
+  };
+
+  const goToMarvelPage = (link) => {
+    window.open(link, "_blank");
   };
 
   return (
@@ -134,6 +140,7 @@ function ComicsDisplay() {
           Stop
         </button>
       </div>
+      <MarvelComicsList />
     </div>
   );
 }
