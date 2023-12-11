@@ -3,6 +3,7 @@
   background-color: rgba(165, 42, 42, 0.733);
   height: 215px;
   text-align: center;
+  margin-top: 150px;
 }
 
 .footer-name {
@@ -10,7 +11,7 @@
   color: aliceblue;
   font-family: "Courier New", Courier, monospace;
   font-size: xx-large;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .footer-link {

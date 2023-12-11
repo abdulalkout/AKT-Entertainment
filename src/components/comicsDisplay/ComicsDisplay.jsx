@@ -88,7 +88,7 @@ function ComicsDisplay() {
   };
 
   return (
-    <>
+    <div className="diplay-comics-div">
       <div className={showVideo.content}>
         <img className="comic-img" src={marvelComicPic} />
         <div className="comic-info">
@@ -134,7 +134,7 @@ function ComicsDisplay() {
           Stop
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

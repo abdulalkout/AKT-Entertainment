@@ -1,14 +1,18 @@
 body {
   background-color: black;
-  background-image: url("https://preview.redd.it/v4nhuh2hvgd71.gif?width=640&crop=smart&auto=webp&s=f37ffdb138ac9aa839f5fd77df283992fa749334");
+  /* background-image: url("https://preview.redd.it/v4nhuh2hvgd71.gif?width=640&crop=smart&auto=webp&s=f37ffdb138ac9aa839f5fd77df283992fa749334"); */
   color: aliceblue;
   background-size: cover;
 }
 
 .comic-display {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 20px;
+}
+
+.diplay-comics-div {
+  margin-top: 80px;
 }
 
 .comic-img {
