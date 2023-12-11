@@ -3,6 +3,7 @@ import "./SignInPage.css";
 import { useState, useContext } from "react";
 import { SignInContext } from "../../contexts/userContext/SignInContext";
 import { WatchContext } from "../../contexts/userContext/watchContext";
+import { ProductsContext } from "../../contexts/apiContext/ProductsContext";
 
 // import components //
 import NavBar from "../../components/navBar/NavBar";
@@ -32,6 +33,7 @@ function SignInPage() {
   const { setSignIn, users, setUsers, signIn, setUser, cart, user, setCart } =
     useContext(SignInContext);
   const { watchLater, setWatchLater } = useContext(WatchContext);
+  const { allMallData, setMallData } = useContext(ProductsContext);
 
   const checkUser = () => {
     users.map((user) => {
@@ -83,6 +85,7 @@ function SignInPage() {
 
     setWatchLater([]);
     setCart([]);
+    setMallData(allMallData);
     // console.log(user);
     // appendLogsForUser();
   };
