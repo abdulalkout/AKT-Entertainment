@@ -1,7 +1,7 @@
-.footer-link {
+.footer-div {
   color: aliceblue;
-  background-color: brown;
-  height: 150px;
+  background-color: rgba(165, 42, 42, 0.733);
+  height: 215px;
   text-align: center;
 }
 
@@ -11,15 +11,29 @@
   font-family: "Courier New", Courier, monospace;
   font-size: xx-large;
   font-weight: 700;
-  text-align: center;
-  padding-top: 20px;
-  /* height: 100px; */
+}
+
+.footer-link {
+  padding: 50px;
 }
 
 .footer-name:hover {
   color: aliceblue;
   text-decoration: underline;
   cursor: pointer;
+}
+
+.footer-pics {
+  height: 60px;
+  margin-left: 5px;
+}
+.footer-pics:hover {
+  height: 80px;
+  cursor: pointer;
+}
+
+.footer-pics-div {
+  margin-top: 15px;
 }
 
 @media only screen and (max-width: 800px) {
